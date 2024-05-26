@@ -13,9 +13,6 @@ public class JsonConverter {
     }
 
     public void convertToJson(Cliente cliente) {
-        ObjectMapper objectMapper = new ObjectMapper();
-        objectMapper.setSerializationInclusion(JsonInclude.Include.NON_NULL);
-
         try {
             File filePath = new File("src/main/resources/cliente.json");
             objectMapper.writeValue(filePath, cliente);
@@ -26,7 +23,6 @@ public class JsonConverter {
     }
 
     public Cliente convertFromJson(String jsonPath) {
-        ObjectMapper objectMapper = new ObjectMapper();
         Cliente cliente = null;
 
         try {
